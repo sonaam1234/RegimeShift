@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 '''
 Get the data and calculate returns
 '''
-nifty = pd.read_csv('nifty.csv', index_col=0, parse_dates=True# Get nifty prices
+nifty = pd.read_csv('nifty.csv', index_col=0, parse_dates=True)['Nifty']# Get nifty prices
 nifty_ret = nifty.resample('W').last().pct_change().dropna()# Get weekly returns
-nifty_ret.plot(title='Excess returns', figsize=(12, 3)) # Plot the dataset
+nifty_ret.plot(title='Weekly returns', figsize=(12, 3)) # Plot the dataset
 
 
 '''
